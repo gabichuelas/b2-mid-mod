@@ -10,15 +10,32 @@ RSpec.describe 'as a visitor' do
     end
 
     it 'I see the name and price of admissions for that amusement park' do
-      # ...
+
+      visit "/park/#{@hershey.id}"
+
+      expect(page).to have_content('Hershey Park')
+      expect(page).to have_content('Admissions: $50.00')
     end
 
     it 'And I see the names of all the rides that are at that theme park listed in alphabetical order' do
       # ..
+      visit "/park/#{@hershey.id}"
+
+      within(".rides-#{@hershey.id}") do
+        expect(page).to have_content('Lightning Racer')
+        expect(page).to have_content('Storm Runner')
+        expect(page).to have_content('The Great Bear')
+        expect(page).to have_content('Average Thrill Rating: 7')
+      end
     end
 
     it 'And I see the average thrill rating of this amusement park’s rides' do
-      # ..
+
+      visit "/park/#{@hershey.id}"
+
+      within(".rides-#{@hershey.id}") do
+        expect(page).to have_content('Average Thrill Rating: 7')
+      end
     end
   end
 end
