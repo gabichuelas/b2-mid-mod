@@ -1,7 +1,8 @@
 RSpec.describe 'as a user' do
   describe 'when I visit a mechanics index page' do
-    before :each do
 
+    before :each do
+      
       @sam = Mechanic.create!(name: 'Sam Mills', years_of_experience: 10)
       @kara = Mechanic.create!(name: 'Kara Smith', years_of_experience: 11)
     end
