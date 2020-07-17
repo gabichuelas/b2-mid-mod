@@ -10,8 +10,8 @@ RSpec.describe 'as a user' do
 
       @kara = Mechanic.create!(name: 'Kara Smith', years_of_experience: 11)
 
-      RideMechanics.create!(ride_id: @light_racer.id, mechanic_id: @kara.id)
-      RideMechanics.create!(ride_id: @storm_runner.id, mechanic_id: @kara.id)
+      RideMechanic.create!(ride_id: @light_racer.id, mechanic_id: @kara.id)
+      RideMechanic.create!(ride_id: @storm_runner.id, mechanic_id: @kara.id)
     end
 
     it 'I see their name, years of experience, and names of all rides they’re working on' do
