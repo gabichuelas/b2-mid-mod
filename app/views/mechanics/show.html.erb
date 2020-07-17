@@ -1,7 +1,7 @@
 <h2><%= @mechanic.name %></h2>
 <h4><%= @mechanic.years_of_experience %> years of experience</h4>
 <h4>Current rides they're working on:</h4>
-<ul>
+<ul class='mechanic-rides'>
   <% @mechanic.rides.each do |ride| %>
     <li><%= ride.name %></li>
   <% end %>
@@ -13,7 +13,7 @@
   <select name="rides">
     <% @rides.each do |ride| %>
       <% if !@mechanic.rides.include?(ride) %>
-        <option value=<%= "#{ride.id}" %>><%= ride.name %></option>
+        <option value=<%= "#{ride.name}" %>><%= ride.name %></option>
       <% else %>
       <% end %>
     <% end %>
