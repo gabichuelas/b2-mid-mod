@@ -1,8 +1,6 @@
 RSpec.describe Park do
   it { should have_many :rides }
 
-  describe '#avg_thrill_rating' do
-
     before :each do
       @hershey = Park.create!(name: 'Hershey Park', admission: 50.00)
 
@@ -11,9 +9,8 @@ RSpec.describe Park do
       @bear = @hershey.rides.create!(name: 'The Great Bear', rating: 8)
     end
 
-    it 'can calculate average rating for all rides in a given park' do
+    it '#avg_trhill_rating: can calculate average rating for all rides in a given park' do
 
       expect(@hershey.avg_thrill_rating).to eq(7)
     end
-  end
 end
