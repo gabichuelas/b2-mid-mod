@@ -9,7 +9,7 @@ RSpec.describe Park do
       @light_racer = @hershey.rides.create!(name: 'Lightning Racer', rating: 6)
     end
 
-    it '#avg_trhill_rating: can calculate average rating for all rides in a given park' do
+    it '#avg_thrill_rating: can calculate average rating for all rides in a given park' do
 
       expect(@hershey.avg_thrill_rating).to eq(7)
     end
