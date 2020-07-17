@@ -2,7 +2,7 @@
 <h4>Admissions: $<%= format("%.2f", @park.admission) %></h4>
 <h4>Rides:</h4>
 <ul class="rides-<%= @park.id %>">
-  <% @park.rides.each do |ride| %>
+  <% @park.rides_alphabetically.each do |ride| %>
     <li><%= ride.name %></li>
   <% end %>
 </ul>
