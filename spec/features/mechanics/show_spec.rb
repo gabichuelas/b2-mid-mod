@@ -27,6 +27,10 @@ RSpec.describe 'as a user' do
     it 'And I also see a form to add a ride to their workload; When I fill in that field with an id of an existing ride and hit submit; I’m taken back to that mechanics show page; And I see the name of that newly added ride on this mechanics show page' do
 
       visit "/mechanics/#{@kara.id}"
+      
+      within('.mechanic-rides') do
+        expect(page).to_not have_content('The Great Bear')
+      end
 
       select "#{@bear.name}", :from => "rides"
       click_on('Add Ride')
