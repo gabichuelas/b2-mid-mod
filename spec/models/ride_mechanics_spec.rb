@@ -1,4 +1,6 @@
 RSpec.describe RideMechanic do
-  it { should belong_to :ride }
-  it { should belong_to :mechanic }
+  describe 'relationships' do
+    it { should belong_to :ride }
+    it { should belong_to :mechanic }
+  end 
 end
