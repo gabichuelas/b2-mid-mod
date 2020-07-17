@@ -16,6 +16,8 @@ RSpec.describe Park do
 
     it '#sort_alphabetically: can list rides in alphabetical order' do
 
+      expect(@hershey.rides).to eq([@bear, @storm_runner, @light_racer])
+
       expect(@hershey.rides_alphabetically).to eq([@light_racer, @storm_runner, @bear])
     end
 end
