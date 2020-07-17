@@ -34,6 +34,11 @@ RSpec.describe 'as a user' do
       within('.mechanic-rides') do
         expect(page).to have_content('The Great Bear')
       end
+
+      # no longer shows ride that was just added in the dropdown
+      within("#rides") do
+        expect(page).to_not have_content(@bear.name)
+      end
     end
   end
 end

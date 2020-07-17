@@ -10,8 +10,8 @@
 <%= form_tag "/mechanics/#{@mechanic.id}" do %>
   <label for="rides">Add a ride to workload:</label>
   <br>
-  <select name="rides">
-    <<option value="" disabled selected>Select Ride</option>
+  <select name="rides" id="rides">
+    <option value="" disabled selected>Select Ride</option>
     <% @rides.each do |ride| %>
       <% if !@mechanic.rides.include?(ride) %>
         <option value=<%= ride.id %>><%= ride.name %></option>
