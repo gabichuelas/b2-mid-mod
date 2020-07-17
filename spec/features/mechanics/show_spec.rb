@@ -29,7 +29,7 @@ RSpec.describe 'as a user' do
       visit "/mechanics/#{@kara.id}"
 
       select "#{@bear.id}", :from => "rides"
-      click_on('Add Ride to Workload')
+      click_on('Add Ride')
 
       expect(page).to have_content('The Great Bear')
     end
