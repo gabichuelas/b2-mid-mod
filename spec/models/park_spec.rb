@@ -13,4 +13,9 @@ RSpec.describe Park do
 
       expect(@hershey.avg_thrill_rating).to eq(7)
     end
+
+    it '#sort_alphabetically: can list rides in alphabetical order' do
+
+      expect(@hershey.rides_alphabetically).to eq([@light_racer, @storm_runner, @bear])
+    end
 end
