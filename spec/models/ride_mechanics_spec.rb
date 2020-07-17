@@ -1,4 +1,4 @@
-RSpec.describe RideMechanics do
-  it { should belong_to :rides }
-  it { should belong_to :mechanics }
+RSpec.describe RideMechanic do
+  it { should belong_to :ride }
+  it { should belong_to :mechanic }
 end
