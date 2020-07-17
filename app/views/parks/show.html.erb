@@ -1,9 +1,9 @@
 <h2><%= @park.name %></h2>
 <h4>Admissions: $<%= format("%.2f", @park.admission) %></h4>
 <h4>Rides:</h4>
-<ul class="rides-<%= @park.id %>">
+<ul class="rides">
   <% @park.rides_alphabetically.each do |ride| %>
-    <li><%= ride.name %></li>
+    <li class='ride-name'><%= ride.name %></li>
   <% end %>
 </ul>
 <p>Average Thrill Rating: <%= @park.avg_thrill_rating.round(1) %></p>

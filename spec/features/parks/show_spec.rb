@@ -3,7 +3,8 @@ RSpec.describe 'as a visitor' do
 
     before :each do
       @hershey = Park.create!(name: 'Hershey Park', admission: 50.00)
-
+      
+      # CREATED OUT OF ORDER FOR TESTING
       @bear = @hershey.rides.create!(name: 'The Great Bear', rating: 8)
       @storm_runner = @hershey.rides.create!(name: 'Storm Runner', rating: 7)
       @light_racer = @hershey.rides.create!(name: 'Lightning Racer', rating: 6)
@@ -18,13 +19,19 @@ RSpec.describe 'as a visitor' do
     end
 
     it 'And I see the names of all the rides that are at that theme park listed in alphabetical order' do
-      # ..
+
       visit "/parks/#{@hershey.id}"
 
-      within(".rides-#{@hershey.id}") do
-        expect(page).to have_content('Lightning Racer')
-        expect(page).to have_content('Storm Runner')
-        expect(page).to have_content('The Great Bear')
+      within(".rides") do
+        # ATTEMPT TO TEST ORDER ON PAGE
+        page.body.index('Lightning Racer').should < page.body.index('Storm Runner')
+
+        page.body.index('Storm Runner').should < page.body.index('The Great Bear')
+
+        # ORIGINAL EXPECTATIONS
+        # expect(page).to have_content('Lightning Racer')
+        # expect(page).to have_content('Storm Runner')
+        # expect(page).to have_content('The Great Bear')
       end
     end
 
