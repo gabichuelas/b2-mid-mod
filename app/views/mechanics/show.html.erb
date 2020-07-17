@@ -11,9 +11,10 @@
   <label for="rides">Add a ride to workload:</label>
   <br>
   <select name="rides">
+    <<option value="" disabled selected>Select Ride</option>
     <% @rides.each do |ride| %>
       <% if !@mechanic.rides.include?(ride) %>
-        <option value=<%= "#{ride.name}" %>><%= ride.name %></option>
+        <option value=<%= ride.id %>><%= ride.name %></option>
       <% else %>
       <% end %>
     <% end %>
